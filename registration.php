@@ -24,7 +24,7 @@
 		
 		if ((filter_var($email_regex, FILTER_VALIDATE_EMAIL)==false) || ($email_regex!=$email)){
 			$allOK=false;
-			$_SESSION['e_email']="Entry correct email!";
+			$_SESSION['e_email']="Entry a email that can be validate!";
 		}
 		
 		//validated the password
@@ -33,7 +33,7 @@
 		
 		if ((strlen($pw1)<8) || (strlen($pw1)>20)){
 			$allOK=false;
-			$_SESSION['e_pw']="Password have to be min 8 char or max 20!";
+			$_SESSION['e_pw']="Password must contain at least 8 char but not exceed above 20 char!";
 		}
 		
 		if ($pw1!=$pw2){
@@ -85,7 +85,7 @@
 				$amountE = $result->num_rows;
 				if($amountE>0){
 					$allOK=false;
-					$_SESSION['e_email']="The email have been already assigned to an account";
+					$_SESSION['e_email']="The email have been already assigned to another account";
 				}		
 
 				//Nick free=?
@@ -96,7 +96,7 @@
 				$amountN = $result->num_rows;
 				if($amountN>0){
 					$allOK=false;
-					$_SESSION['e_nick']="The Nick is already occupied by someone!";
+					$_SESSION['e_nick']="The Nick is already occupied by someone on this server!";
 				}
 				
 				if ($allOK==true){
