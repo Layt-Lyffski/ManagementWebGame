@@ -66,7 +66,7 @@
 		$_SESSION['fr_email'] = $email;
 		$_SESSION['fr_pw1'] = $pw1;
 		$_SESSION['fr_pw2'] = $pw2;
-		if (isset($_POST['agreement'])) $_SESSION['fr_agreement'] = true;
+		if (isset($_POST['agreement'])){ $_SESSION['fr_agreement'] = true};
 		
 		require_once "connect.php";
 		mysqli_report(MYSQLI_REPORT_STRICT);
@@ -158,7 +158,8 @@
 			}
 		?>
 		
-		E-mail: <br /> <input type="text" value="<?php
+		E-mail: <br /> <input type="text" value="
+		<?php
 			if (isset($_SESSION['fr_email'])){
 				echo $_SESSION['fr_email'];
 				unset($_SESSION['fr_email']);
